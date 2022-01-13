@@ -33,6 +33,18 @@ class ClassBaseFragment : Fragment() {
             findNavController().navigate(R.id.action_classBaseFragment_to_classBaseAlarmSettingFragment)
         }
 
+        // 공지사항 탭으로 이동
+        binding.notice.setOnClickListener {
+            findNavController().navigate(R.id.action_classBaseFragment_to_noticeBaseListFragment)
+        }
+
+
+        //강의탭으로 이동
+        binding.course.setOnClickListener {
+            findNavController().navigate(R.id.action_classBaseFragment_to_courseBaseListFragment)
+        }
+
+        // 과제탭으로 이동
         binding.homework.setOnClickListener {
             findNavController().navigate(R.id.action_classBaseFragment_to_alarmBaseListFragment)
         }

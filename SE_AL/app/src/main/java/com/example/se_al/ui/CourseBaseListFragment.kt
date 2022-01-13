@@ -6,15 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.se_al.databinding.FragmentAlarmBaseListBinding
+import com.example.se_al.databinding.FragmentCourseBaseListBinding
 
-class AlarmBaseListFragment  : Fragment() {
+class CourseBaseListFragment : Fragment() {
 
-    private var _binding: FragmentAlarmBaseListBinding? = null
+    private var _binding: FragmentCourseBaseListBinding? = null
 
     private val binding get() = _binding!!
 
-    private lateinit var viewModel : AlarmBaseListViewModel
+    private lateinit var viewModel : CourseBaseListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,10 +27,10 @@ class AlarmBaseListFragment  : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentAlarmBaseListBinding.inflate(inflater, container, false)
+        _binding = FragmentCourseBaseListBinding.inflate(inflater, container, false)
 
         activity?.let {
-            viewModel = ViewModelProvider(it).get(AlarmBaseListViewModel::class.java)
+            viewModel = ViewModelProvider(it).get(CourseBaseListViewModel::class.java)
             binding.viewModel = viewModel
             binding.lifecycleOwner = this
         }

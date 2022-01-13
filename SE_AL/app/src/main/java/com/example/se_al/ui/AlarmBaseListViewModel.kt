@@ -1,16 +1,22 @@
 package com.example.se_al.ui
 
+import android.app.Application
+import android.widget.Toast
+import androidx.databinding.ObservableField
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.se_al.SampleData
 
-class AlarmBaseListViewModel : ViewModel() {
-//    var sampleData = arrayListOf<SampleData>(
-//        SampleData("sample1","2021-12-29","title1","memo1"),
-//        SampleData("sample2","2021-12-30","title2","memo2"),
-//        SampleData("sample3","2021-12-31","title3","memo3")
-//    )
+class AlarmBaseListViewModel(application: Application) : AndroidViewModel(application) {
+    var main_text: ObservableField<String> = ObservableField("직접추가")
 
+    val mApplication = application
 
+    fun onClickButton() {
+        // Click 시 데이터를 추가.
+        Toast.makeText(mApplication, "Click!", Toast.LENGTH_SHORT).show()
+
+    }
 }
